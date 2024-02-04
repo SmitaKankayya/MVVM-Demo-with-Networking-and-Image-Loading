@@ -9,6 +9,5 @@ import Foundation
 enum Constant{
     enum API{
         static let url = "https://fakestoreapi.com/products"
-        //anything which has to be acces by class name has to be static
     }
 }

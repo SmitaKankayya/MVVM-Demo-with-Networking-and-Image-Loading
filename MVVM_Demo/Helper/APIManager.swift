@@ -14,11 +14,11 @@ enum DataError: Error{
     case network(Error?)
 }
 
-typealias Handler = (Result<[Product],DataError>)->Void //this is closure which has two parts response and error
+typealias Handler = (Result<[Product],DataError>)->Void
 
 final class APIManager{
-    static let shared = APIManager()   //step1 - static
-    private init(){}   //step 2- init block must be private
+    static let shared = APIManager()
+    private init(){}
     
     
     func fetchProducts(completion: @escaping Handler){
@@ -31,7 +31,7 @@ final class APIManager{
             }
             guard let response = response as?
                     HTTPURLResponse,
-                    200...299 ~= response.statusCode   //~= pattern matching operator //typecasting is doing to check the status code is successful or not
+                  200...299 ~= response.statusCode
             else {
                 completion(.failure(.invalidResponse))
                 return
@@ -44,19 +44,6 @@ final class APIManager{
                 completion(.failure(.invalidDecoding))
             }
         }.resume()
-        
     }
-    
-    
-    
-    
 }
 
-//helper class is a class which should not be inherited that time make class as final
-//helper class multiple object should not be created.
-//only one object should be created in helper class.
-//Means helper class is singelton class.
-//if not create init block private then outside we create object but i dont want multiple object that is why we make private init block
-
-
-//typealise is keyword used to give name

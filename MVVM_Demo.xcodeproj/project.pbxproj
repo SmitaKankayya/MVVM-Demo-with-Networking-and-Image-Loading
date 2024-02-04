@@ -145,9 +145,9 @@
 		20C3A16A2B6FA1A600DCCCCC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20C268AC2B6F4B3C00F81724 /* ProductTableViewCell.xib */,
 				20C268AB2B6F4B3C00F81724 /* ProductTableViewCell.swift */,
 				20C268A92B6F4B0200F81724 /* ProductListViewController.swift */,
+				20C268AC2B6F4B3C00F81724 /* ProductTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
